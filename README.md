@@ -6,12 +6,12 @@ As I am trying to learn a bunch of "new-to-me" technologies, this repo features:
 * Assemble
 
 > Using the `grunt-init-assemble` scaffolding
-s
-** `grunt-contrib-connect`
-** `grunt-contrib-imagemin`
-** `grunt-autoprefixer`
-** `grunt-jekyll`            <-- Redundant? I knows!
-** `grunt-svgstore`
+
+* `grunt-contrib-connect`
+* `grunt-contrib-imagemin`
+* `grunt-autoprefixer`
+* `grunt-jekyll`            <-- Redundant? I know!
+* `grunt-svgstore`
 
 # boilerplate [![NPM version](https://badge.fury.io/js/assemble-boilerplate.png)](http://badge.fury.io/js/assemble-boilerplate)
 
