@@ -1,0 +1,39 @@
+@import '../utils/mixins.less';
+.marc-left {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 15px;
+	.clearfix();
+	max-width: 60%;
+	min-width: 40%;
+	float: left;
+}
+.marc-right {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left:  (@grid-gutter-width / 2);
+	padding-right: (@grid-gutter-width / 2);
+	.clearfix();
+	max-width: 38%;
+	float: right;
+	nav {
+		padding: 0 !important;
+		margin-bottom: 0;
+		list-style: none;
+		ul {
+			padding: 0 !important;
+			li {
+				padding: 0 !important;
+				a {
+					padding: 10px;
+					&:hover {
+						background-color: #222222;
+					}
+					img {
+						height: 40px;
+					}
+				}
+			}
+		}
+	}
+}

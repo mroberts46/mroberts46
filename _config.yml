@@ -36,11 +36,11 @@ components:       <%= site.theme %>/components
 
 # Assemble metadata.
 assemble:
-  latest:         0.4.33  # change to <%= pkg.version %>
+  latest:         <%= pkg.version %>
 
 # GitHub
 username:         assemble
-name:             assemble # change to <%= pkg.name %>
+name:             <%= pkg.name %>
 download:
   source:         <%= pkg.homepage %>/archive/master.zip
 
@@ -49,9 +49,9 @@ download:
 # Site metadata
 # =============================================
 
-brand:            ASSEMBLE
-title:            BOILERPLATE
-lead:             The most awe inspiring static site boilerplate in Northern Kentucky.
+brand:            MARC ROBERTS
+title:            PHANTOM DEVELOPMENT
+lead:             This is only a test!
 
 version:          <%= pkg.version %>
 description:      <%= pkg.description %>
@@ -70,6 +70,7 @@ url:
   domain:         http://assemble.io/
   about:          <%= site.url.domain %>/about/
   blog:           <%= site.url.domain %>/blog/
+  gallery:        <%= site.url.domain %>/gallery/
 
 
 # SEO/SEM

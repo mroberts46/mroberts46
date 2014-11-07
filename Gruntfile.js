@@ -89,12 +89,70 @@ module.exports = function(grunt) {
       }
     },
 
+    connect: {
+      server: {
+        options: {
+          port: 4000,
+          hostname: 'localhost',
+          base: '<%= site.dest %>',
+          open: true,
+          livereload: true
+        }
+      }
+    },
+
+    autoprefixer: {
+      files: {
+        options: {
+          cascade: true,
+          diff: 'resources/css/diff.css'
+        },
+        expand: true,
+        src: '<%= less.options.paths %>/*.less',
+        dest: '<%= site.assets %>/css/site.less'
+      }
+    },
+
+    imagemin: {
+      images: {
+        options: {
+          optimizationLevel: 6,
+          svgoPlugins: [{
+            removeViewBox: false
+          }]
+        },
+        files: [{
+          expand: true,
+          cwd: 'resources/',
+          src: '**/*.{png,jpg,gif}',
+          dest: '<%= site.assets %>/img/'
+        }]
+      }
+    },
+
+    svgstore: {
+      options: {
+        prefix: 'ico-',
+        includedemo: true
+      },
+      files: {
+        expand: true,
+        cwd: 'resources/svg/',
+        src: '*.svg',
+        dest: '<%= site.assets %>/svg/finished.svg'
+      }
+    },
+
     watch: {
       all: {
         files: ['<%= jshint.all %>'],
         tasks: ['jshint', 'nodeunit']
       },
       site: {
+        options: {
+          livereload: true,
+          reload: true
+        },
         files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs'],
         tasks: ['design']
       }
@@ -103,10 +161,15 @@ module.exports = function(grunt) {
 
   // Load npm plugins to provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-readme');
+  grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-sync-pkg');
   grunt.loadNpmTasks('assemble-less');
   grunt.loadNpmTasks('assemble');
@@ -117,5 +180,5 @@ module.exports = function(grunt) {
   grunt.registerTask('docs', ['readme', 'sync']);
 
   // Use this going forward.
-  grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
+  grunt.registerTask('default', ['clean','jshint','copy','svgstore','assemble','imagemin','autoprefixer','less','docs','connect','watch:site']);
 };
