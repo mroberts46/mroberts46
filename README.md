@@ -4,7 +4,9 @@ Then you may have run across this by accident. I have created this repo as a tes
 ## Included...
 As I am trying to learn a bunch of "new-to-me" technologies, this repo features:
 * Assemble
+
 > Using the `grunt-init-assemble` scaffolding
+s
 ** `grunt-contrib-connect`
 ** `grunt-contrib-imagemin`
 ** `grunt-autoprefixer`
