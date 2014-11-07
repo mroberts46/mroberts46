@@ -1,3 +1,16 @@
+# If you're reading this...
+Then you may have run across this by accident. I have created this repo as a testing for what I hope will become my new website.
+
+## Included...
+As I am trying to learn a bunch of "new-to-me" technologies, this repo features:
+* Assemble
+> Using the `grunt-init-assemble` scaffolding
+** `grunt-contrib-connect`
+** `grunt-contrib-imagemin`
+** `grunt-autoprefixer`
+** `grunt-jekyll`            <-- Redundant? I knows!
+** `grunt-svgstore`
+
 # boilerplate [![NPM version](https://badge.fury.io/js/assemble-boilerplate.png)](http://badge.fury.io/js/assemble-boilerplate)
 
 > Boilerplate for [Assemble](https://github.com/assemble/assemble)
